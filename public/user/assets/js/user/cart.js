@@ -35,7 +35,7 @@ function cart() {
                         </td>
                         <td class="image product-thumbnail pt-40"><img src="${cartItem.product.product_image}" alt="#"></td>
                         <td class="product-des product-name">
-                            <h6 class="mb-5"><a class='product-name mb-10 text-heading' href='shop-product-right.html'>${cartItem.product.product_name}</a></h6>
+                            <h6 class="mb-5"><a class='product-name mb-10 text-heading' href='/prod/detail/${cartItem.product.id}'>${cartItem.product.product_name}</a></h6>
                             <div class="product-rate-cover">
                                 <div class="product-rate d-inline-block">
                                     <div class="product-rating" style="width:90%"></div>

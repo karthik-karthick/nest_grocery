@@ -112,7 +112,7 @@
                                     </div>
                                     <div>
                                         <span class="font-small text-muted">By <a
-                                                href='vendor-details-1.html'>{{ $products->brand->brand_name }}</a></span>
+                                                href='{{route('vendor.list')}}'>{{ $products->brand->brand_name }}</a></span>
                                     </div>
                                     <div class="product-card-bottom">
                                         <div class="product-price">
@@ -183,7 +183,7 @@
                                         </div>
                                         <div>
                                             <span class="font-small text-muted">By <a
-                                                    href='vendor-details-1.html'>NestFood</a></span>
+                                                    href='{{route('vendor.list')}}'>NestFood</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">
@@ -222,7 +222,7 @@
                                             <span class="font-small ml-5 text-muted"> (4.0)</span>
                                         </div>
                                         <div>
-                                            <span class="font-small text-muted">By <a href='vendor-details-1.html'>Old El
+                                            <span class="font-small text-muted">By <a href='{{route('vendor.list')}}'>Old El
                                                     Paso</a></span>
                                         </div>
                                         <div class="product-card-bottom">
@@ -263,7 +263,7 @@
                                         </div>
                                         <div>
                                             <span class="font-small text-muted">By <a
-                                                    href='vendor-details-1.html'>Progresso</a></span>
+                                                    href='{{route('vendor.list')}}'>Progresso</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">
@@ -303,7 +303,7 @@
                                         </div>
                                         <div>
                                             <span class="font-small text-muted">By <a
-                                                    href='vendor-details-1.html'>Yoplait</a></span>
+                                                    href='{{route('vendor.list')}}'>Yoplait</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">

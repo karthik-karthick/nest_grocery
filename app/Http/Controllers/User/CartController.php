@@ -85,15 +85,31 @@ class CartController extends Controller
 
     public function cart_increase(Request $request)
     {
-
         $cart_id = $request->input('cart_id');
-
-        $quantity = 1;
         $cart = Cart::find($cart_id);
-        $cart->cart_quantity = $cart->cart_quantity + $quantity;
-        $cart->update();
-        return response()->json(['message' => 'Cart quantity decreased successfully']);
+
+        if ($cart) {
+            $product = Product::find($cart->product_id);
+
+            if ($product) {
+                $quantity = 1;
+                $new_quantity = $cart->cart_quantity + $quantity;
+
+                if ($new_quantity <= $product->current_stock) {
+                    $cart->cart_quantity = $new_quantity;
+                    $cart->update();
+                    return response()->json(['message' => 'Cart quantity increased successfully']);
+                } else {
+                    return response()->json(['message' => 'Cannot increase cart quantity beyond current stock'], 400);
+                }
+            } else {
+                return response()->json(['message' => 'Product not found'], 404);
+            }
+        } else {
+            return response()->json(['message' => 'Cart not found'], 404);
+        }
     }
+
     public function cart_item_delete(Request $request)
     {
         $cart_id = $request->input('cart_id');

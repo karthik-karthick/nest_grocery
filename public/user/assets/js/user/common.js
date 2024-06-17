@@ -103,11 +103,11 @@ function cart_item() {
         method: 'GET',
         success: function (response) {
             $('#dropcart__item').empty();
-            $('#totaldiv').empty(); // Clear existing table content
+            $('#totaldiv').empty(); 
             var subtotal2 = 0;
             var shipping2 = 0;
             var maintotal2 = 0;
-            var baseUrl = 'http://127.0.0.1:8000'; // Base URL of your server
+            // var baseUrl = 'http://127.0.0.1:8000'; // Base URL of your server
 
             $.each(response.html, function (index, cartItem) {
                 var count = response.html.length;
@@ -126,10 +126,10 @@ function cart_item() {
                 var htmls = `    
                                 <li>
                                     <div class="shopping-cart-img">
-                                        <a href="shop-product-right.html"><img alt="Nest" src="/${imageUrl}"></a>
+                                        <a href="/prod/detail/${cartItem.product.id}"><img alt="Nest" src="/${imageUrl}"></a>
                                     </div>
                                     <div class="shopping-cart-title">
-                                        <h4><a href="shop-product-right.html">${cartItem.product.tag_name}</a></h4>
+                                        <h4><a href="/prod/detail/${cartItem.product.id}">${cartItem.product.tag_name}</a></h4>
                                         <h4><span>${cartItem.cart_quantity} × </span>${cartItem.product.selling_price}</h4>
                                     </div>
                                     <div class="shopping-cart-delete">
